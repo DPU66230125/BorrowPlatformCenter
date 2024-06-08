@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow Platform Center</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/catalog-styles.css"> <!-- Link to separate catalog styles -->
+</head>
+<body>
+    <div class="header">
+        <h1>Borrow Platform Center</h1>
+        <div class="buttons">
+            <button type="button" class="highlight-button" onclick="navigateToMyItems()">รายการยืมของฉัน</button>
+            <button type="button" class="logout-button" onclick="logout()">ออกจากระบบ</button>
+        </div>
+    </div>
+    <div class="catalog">
+        <!-- รายการสินค้า -->
+        <button class="item-button" onclick="openModal('ชื่อรายการ')">
+            <div class="item-card">
+                <img src="https://images-ext-1.discordapp.net/external/MCWh5SjcCLWMpLmWHwm0T7yc8TfdOMlm86uXz51Wek8/https/www.jib.co.th/img_master/product/original/20190903175958_35046_287_1.jpg?format=webp&width=905&height=905" alt="รูปสินค้า" class="item-cardimage">
+                <h3>โน็ตบุ๊ค HP Pavilion</h3>
+            </div>
+        </button>
+        <button class="item-button" onclick="openModal('ชื่อรายการ')">
+            <div class="item-card">
+                <img src="https://media-cdn.bnn.in.th/38578/4949268706124-3-square_medium.jpg" alt="รูปสินค้า" class="item-cardimage">
+                <h3>เมาส์ปากกา Walcom</h3>
+            </div>
+        </button>
+        <button class="item-button" onclick="openModal('ชื่อรายการ')">
+            <div class="item-card">
+                <img src="https://images-ext-1.discordapp.net/external/7Nj4q2KhmZ2jwRF7xbksL79UVpkPjtH8sppKJ-955QY/https/www.zoomcamera.net/wp-content/uploads/2018/11/Nikon-D5600-1.jpg?format=webp&width=905&height=905" alt="รูปสินค้า" class="item-cardimage">
+                <h3>กล้องถ่ายรูป</h3>
+            </div>
+        </button>
+        <button class="item-button" onclick="openModal('ชื่อรายการ')">
+            <div class="item-card">
+                <img src="https://images-ext-1.discordapp.net/external/3VXXxrzwweWCAEgUtvS96UtN_uwpR4UOthXl9QQdNP8/https/www.ec-mall.com/wp-content/uploads/2021/05/SanDisk-Extreme-Pro-SDXC-UHS-II-300MBs-260-MBS-3.jpg?format=webp&width=905&height=905" alt="รูปสินค้า" class="item-cardimage">
+                <h3>Memory Card สำหรับกล้องถ่ายรูป</h3>
+            </div>
+        </button>
+        <button class="item-button" onclick="openModal('ชื่อรายการ')">
+            <div class="item-card">
+                <img src="https://images-ext-1.discordapp.net/external/ZV0DJULJK5aSVXrlhbU7cIvm2NIqLWXsBcSmJGGoGwk/%3FodnHeight%3D768%26odnWidth%3D768%26odnBg%3DFFFFFF/https/i5.walmartimages.com/seo/LEEy-world-Mens-Jacket-Slim-Fit-Lightweight-Jacket-Casual-Bomber-Jacket-Sportswear-Black-XL_ee446a1e-5564-468a-b64f-4417cd801993.eea5257f326d48576bf8d133d646ee87.jpeg?format=webp&width=905&height=905" alt="รูปสินค้า" class="item-cardimage">
+                <h3>เสื้อคลุม ANT</h3>
+            </div>
+        </button>
+        <button class="item-button" onclick="openModal('ชื่อรายการ')">
+            <div class="item-card">
+                <img src="https://images-ext-1.discordapp.net/external/vEXqpHkC47W76UryK8USeHR_1eAblrzBKieDP6rw5co/%3Fv%3D1653608465/https/topicrentals.co.nz/cdn/shop/products/greenscreen.jpg?format=webp&width=905&height=905" alt="รูปสินค้า" class="item-cardimage">
+                <h3>ฉาก Green Screen</h3>
+            </div>
+        </button>
+        <button class="item-button" onclick="openModal('ชื่อรายการ')">
+            <div class="item-card">
+                <img src="https://images-ext-1.discordapp.net/external/oc5JeAKLb0cYv6IDx3tZYMNBiLT6MRjDCz8-VwBV8u0/https/i5.walmartimages.com/seo/Meta-Quest-2-Advanced-All-In-One-Virtual-Reality-Headset-256-GB_a3c190a4-4115-4f33-a996-e771be8df2f7.ac98c92791feda09a4d31279631a853a.jpeg?format=webp&width=905&height=905" alt="รูปสินค้า" class="item-cardimage">
+                <h3>แว่น VR Oculus Quest 2</h3>
+            </div>
+        </button>
+        <button class="item-button" onclick="openModal('ชื่อรายการ')">
+            <div class="item-card">
+                <img src="https://images-ext-1.discordapp.net/external/fuqnwvu4qyCcNIT2tvjf0wrOvc4AzzeUi1jHysF2ACM/%3Fv%3D1596416340/https/cameracommons.ph/cdn/shop/products/S_f590c891-3ab0-4cb5-bd90-7b70dba0099a.jpg?format=webp&width=905&height=905" alt="รูปสินค้า" class="item-cardimage">
+                <h3>ไฟ Studio</h3>
+            </div>
+        </button>
+        <!-- สามารถเพิ่มรายการสินค้าเพิ่มเติมได้ที่นี่ -->
+    </div>
+    
+    <!-- Modal Popup -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Item Placeholder</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h2>เหลือ # ชิ้น</h2>
+                <form>
+                    <label for="quantity">จำนวนการยืม (ชิ้น):</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required><br><br>
+                    <label for="borrow-date-start">เริ่มยืมของวันที่ :</label>
+                    <input type="date" id="borrow-date-start" name="borrow-date-start" required><br><br>
+                    <label for="borrow-date-end">สิ้นสุดการยืมของวันที่ :</label>
+                    <input type="date" id="borrow-date-end" name="borrow-date-end" required>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="submitForm()">ยืม</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openModal(itemName) {
+            document.getElementById('myModal').style.display = 'flex';
+            document.querySelector('.modal-header h2').innerText = `${itemName}`;
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        function submitForm() {
+            // Handle form submission logic
+            alert('ทำอะไรสักอย่าง');
+            closeModal();
+        }
+
+        function logout() {
+            if (confirm('ต้องการออกจากระบบ')) {
+                window.location.href = 'login.html';
+            }
+        }
+
+        function navigateToMyItems() {
+            window.location.href = 'my-items.html';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

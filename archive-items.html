@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติการยืม</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>ประวัติการยืม</h1>
+        <div class="buttons">
+            <button type="button" onclick="goBack()">กลับไปหน้าหลัก</button>
+            <button type="button" class="highlight-button" onclick="navigateToMyItems()">รายการของฉัน</button>
+        </div>
+    </div>
+    <div class="items-container">
+        <!-- รายการสิ่งของ -->
+        <div class="item-card">
+            <img src="images/placeholder.png" alt="รูปสินค้า" class="item-image">
+            <div class="item-details">
+                <h2>ชื่อสินค้า</h2>
+                <p>จำนวนการยืม : #</p>
+                <p>วันที่ยืม : # - #</p>
+                <p>ผู้ยืม : #</p>
+            </div>
+        </div>
+        <!-- สามารถเพิ่มรายการสิ่งของเพิ่มเติมได้ที่นี่ -->
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+
+        function navigateToMyItems() {
+            window.location.href = 'my-items.html';
+        }
+    </script>
+</body>
+</html>
