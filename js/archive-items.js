@@ -2,7 +2,7 @@ let archives = [];
 let selectedIndex = 0;
 let user = null;
 
-async function initLogin() {
+async function initArchives() {
     user = await DB.getUser();
     if (user == null) {
         window.location.href = "./login.html";
@@ -20,6 +20,8 @@ async function initLogin() {
           });
     }
 }
+
+initArchives();
 
 function renderArchives(){
     let container = document.querySelector('#items-container');

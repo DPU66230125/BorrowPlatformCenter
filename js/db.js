@@ -14,7 +14,7 @@ const DB = {
     },
     getUser: async function(){
         let user = null;
-        const snapshot = await db.ref('user').get();
+        const snapshot = await this.db.ref('user').get();
         if (snapshot.exists()) {
             user = snapshot.val();
         }

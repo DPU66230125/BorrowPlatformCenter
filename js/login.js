@@ -21,7 +21,7 @@ function login(){
                 await DB.login(response.data);
                 window.location.href = "index.html"
             }else{
-                alert("ระบบการเชื่อมต่อเกิดข้อผิดพลาด!")
+                alert(response.data.message)
             }
           });
     }else{

@@ -4,6 +4,7 @@ let user = null;
 
 async function initLogin() {
     user = await DB.getUser();
+    console.log(user);
     if (user == null) {
         window.location.href = "./login.html";
     } else {
@@ -21,7 +22,7 @@ async function initLogin() {
     }
 }
 
-function renderItems(){
+function renderItems() {
     let catalogs = document.querySelector('#catalogs');
     availableItems.forEach((value, index) => {
         const ID = value.ID;
@@ -29,7 +30,7 @@ function renderItems(){
         const stock_qty = value.stock_qty;
         const image = value.image;
 
-        catalogs.innerHTML += 
+        catalogs.innerHTML +=
             `<button class="item-button" onclick="openModal(${index})">
                 <div class="item-card">
                     <img src="${image}" alt="รูปสินค้า" class="item-cardimage">
@@ -59,35 +60,50 @@ function closeModal() {
 async function submitForm() {
     // Handle form submission logic
     const item_id = availableItems[selectedIndex].ID;
-    const user_id = user.ID;
-    const qty = $('#quantity').value();
-    const borrow_date = $('borrow-date-start').value();
-    const return_date = $('borrow-date-end').value();
-    var settings = {
-        "url": "http://54.175.155.216/api/p-3/borrow.php?method=borrow-item",
-        "method": "POST",
-        "timeout": 0,
-        "headers": {
-          "Content-Type": "application/json"
-        },
-        "data": JSON.stringify({
-          "item_id": item_id,
-          "user_id": user_id,
-          "qty": qty,
-          "borrow_date": borrow_date,
-          "return_date": return_date
-        }),
-      };
-      
-      $.ajax(settings).done(function (response) {
-        console.log(response);
-        if(response.success){
-            closeModal();
-            window.location.href = "./my-items.html";
-        }else{
-            alert(response.data.message);
+    const user_id = user.id;
+    const qty = $('#quantity').val();
+    const borrow_date = $('#borrow-date-start').val();
+    const return_date = $('#borrow-date-end').val();
+
+    console.log(
+        {
+            "item_id": item_id,
+            "user_id": user_id,
+            "qty": qty,
+            "borrow_date": borrow_date,
+            "return_date": return_date
         }
-      });
+    );
+
+    if (qty != '' && borrow_date != '' && return_date != '') {
+        var settings = {
+            "url": "http://54.175.155.216/api/p-3/borrow.php?method=borrow-item",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": JSON.stringify({
+                "item_id": item_id,
+                "user_id": user_id,
+                "qty": qty,
+                "borrow_date": borrow_date,
+                "return_date": return_date
+            }),
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            if (response.success) {
+                closeModal();
+                window.location.href = "./my-items.html";
+            } else {
+                alert(response.data.message);
+            }
+        });
+    } else {
+        alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+    }
 }
 
 async function logout() {

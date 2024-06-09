@@ -2,13 +2,13 @@ let records = [];
 let selectedIndex = 0;
 let user = null;
 
-async function initLogin() {
+async function initMyItems() {
     user = await DB.getUser();
     if (user == null) {
         window.location.href = "./login.html";
     } else {
         var settings = {
-            "url": `http://54.175.155.216/api/p-3/borrow.php?method=my-records&user_id=${user.ID}`,
+            "url": `http://54.175.155.216/api/p-3/borrow.php?method=my-records&user_id=${user.id}`,
             "method": "GET",
             "timeout": 0,
           };
@@ -20,6 +20,8 @@ async function initLogin() {
           });
     }
 }
+
+initMyItems();
 
 function renderRecords(){
     let container = document.querySelector('#items-container');
@@ -58,7 +60,7 @@ function confirmReturn(i) {
     }
 }
 
-function returnItem() {
+function returnItem(i) {
     const item = records[i];
     var settings = {
         "url": "http://54.175.155.216/api/p-3/borrow.php?method=return-item",
