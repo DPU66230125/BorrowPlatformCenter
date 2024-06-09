@@ -72,7 +72,7 @@ body {
     border-radius: 8px;
     margin: 10px;
     padding: 20px;
-    width: 200px;
+    width: 100%;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -198,16 +198,19 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    max-width: 100%; /* Ensure the container doesn't exceed the screen width */
 }
 
 .item-card {
     display: flex;
+    flex-direction: row; /* Display content horizontally by default */
     align-items: center;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 16px;
     padding: 15px;
-    width: 800px;
+    width: 100%; /* Take full width of the container */
+    max-width: 800px; /* Limit the card width */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -220,8 +223,6 @@ body {
 
 .item-details {
     flex: 1;
-    display: flex;
-    flex-direction: column;
     text-align: left;
 }
 
@@ -253,4 +254,22 @@ body {
 
 .item-actions button:hover {
     background-color: #0056b3;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .item-card {
+        flex-direction: column; /* Display content vertically on smaller screens */
+        align-items: center;
+        width: 80%; /* Take full width of the container */
+    }
+
+    .item-image {
+        margin-right: 0; /* Remove margin for smaller screens */
+        margin-bottom: 20px; /* Add some space between the image and details */
+    }
+
+    .item-actions button {
+    margin-top: 20px;
+    }
 }

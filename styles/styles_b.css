@@ -1,0 +1,256 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.header .buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.header .buttons .highlight-button {
+    background-color: #ffcc00; /* สีที่เด่นชัด */
+    color: black;
+}
+
+.header .buttons .highlight-button:hover {
+    background-color: #ff9900;
+}
+
+.header .buttons .logout-button {
+    background-color: #ff4444; /* สีแดงสดใส */
+    color: white;
+}
+
+.header .buttons .logout-button:hover {
+    background-color: #cc0000;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.item-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    width: 100%; /* Ensure the button takes full width */
+}
+
+.item-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.item-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.modal-header, .modal-body, .modal-footer {
+    padding: 10px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover, .close:focus {
+    color: black;
+}
+
+.modal-body {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-body label.stock-label {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.modal-body form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.modal-body label {
+    margin: 0px 20 15px;
+}
+
+.modal-body input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: auto; /* Adjust width to fit container */
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center; /* Center the button */
+    width: auto;
+}
+
+.modal-footer button {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.modal-footer button:hover {
+    background-color: #0056b3;
+}
+
+.items-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.item-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 15px;
+    width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.item-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.item-details h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.item-details p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.item-actions {
+    display: flex;
+    align-items: flex-end;
+}
+
+.item-actions button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.item-actions button:hover {
+    background-color: #0056b3;
+}
