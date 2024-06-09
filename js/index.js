@@ -8,6 +8,7 @@ async function initLogin() {
     if (user == null) {
         window.location.href = "./login.html";
     } else {
+        document.querySelector('#username').innerHTML = `คุณ ${user.name}`
         var settings = {
             "url": "http://54.175.155.216/api/p-3/borrow.php?method=available-items",
             "method": "GET",
