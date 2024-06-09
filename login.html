@@ -5,17 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="styles/login-styles.css">
+
+    
+    <!-- JQUERY & ACEBASE -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/acebase@latest/dist/browser.min.js"></script>
 </head>
 <body>
     <div class="login-container">
         <h2>Borrow Platform Center</h2>
-        <form action="index.html" method="get">
+        <div>
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required><br><br>
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required><br><br>
-            <button type="submit">เข้าสู่ระบบ</button>
-        </form>
+            <button type="submit" onclick="login()">เข้าสู่ระบบ</button>
+        </div>
     </div>
+
+    <script src="./js/db.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 </html>

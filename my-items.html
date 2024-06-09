@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>รายการของฉัน</title>
     <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- JQUERY & ACEBASE -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/acebase@latest/dist/browser.min.js"></script>
 </head>
 <body>
     <div class="header">
@@ -14,41 +18,12 @@
             <button type="button" class="highlight-button" onclick="navigateToArchiveItems()">ประวัติการยืม</button>
         </div>
     </div>
-    <div class="items-container">
+    <div id="items-container" class="items-container">
         <!-- รายการสิ่งของ -->
-        <div class="item-card">
-            <img src="images/placeholder.png" alt="รูปสินค้า" class="item-image">
-            <div class="item-details">
-                <h2>ชื่อสินค้า</h2>
-                <p>จำนวนการยืม : #</p>
-                <p>วันที่ยืม : # - #</p>
-            </div>
-            <div class="item-actions">
-                <button type="button" onclick="confirmReturn('ชื่อสินค้า')">คืนของ</button>
-            </div>
-        </div>
         <!-- สามารถเพิ่มรายการสิ่งของเพิ่มเติมได้ที่นี่ -->
     </div>
 
-    <script>
-        function goBack() {
-            window.location.href = 'index.html';
-        }
-
-        function navigateToArchiveItems() {
-            window.location.href = 'archive-items.html';
-        }
-
-        function confirmReturn(itemName) {
-            if (confirm(`คุณแน่ใจหรือไม่ว่าต้องการคืน ${itemName}?`)) {
-                returnItem(itemName);
-            }
-        }
-
-        function returnItem(itemName) {
-            alert(`คุณได้ทำการคืน ${itemName}`);
-            // โค๊ดลบ API
-        }
-    </script>
+    <script src="./js/db.js"></script>
+    <script src="./js/my-items.js"></script>
 </body>
 </html>
